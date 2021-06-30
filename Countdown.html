@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown</title>
+    <style>
+        body{
+            background-color: black;
+            border-radius: 50%;
+            width: 204px;
+            height: 204px;
+            padding: 10px;
+            border: 7px solid white;
+           text-align: center;
+           margin-top: 3em;
+           margin-left: 6em;
+            font-size: 100px;
+            font-family: cursive;
+            color:white
+            
+        }   
+    </style>
+</head>
+<body>
+    <div id="timeout_text"></div>
+</body>
+
+<script>
+    
+    
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '10';
+    },1000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '9';
+    },2000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '8';
+    },3000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '7';
+    },4000);
+    
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '6';
+    },5000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '5';
+    },6000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '4';
+    },7000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '3';
+    },8000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '2';
+    },9000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '1';
+    },10000);
+
+    setTimeout(function(){
+        document.getElementById('timeout_text').innerHTML = '0';
+    },11000);
+</script>
+</html>

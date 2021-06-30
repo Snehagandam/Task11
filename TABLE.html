@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title> Dynamic Table </title>
+        
+    </head>
+
+    <body>
+        <div style="width: 50%;float: left;">
+    <form method="POST"  name="sample">
+        Name <input type="text" name= "name"><br><br>
+
+        Age <input type="number" name ="age"><br><br>
+
+        Emailid <input type="text" name="emailid">
+        <br> <br> 
+        <input type="button" name="add" value="Submit" onclick="adddata();" class="btn btn-sucess"><hr>
+    </form>
+    </div>
+
+    <div style="width: 50%;float: right;">
+        <table id="tb1" class="table" border="1">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>EmailID</th>
+                <th> Delete</th>
+                <th> Edit</th>
+            </thead>
+                <tbody>
+
+                </tbody>
+            
+        </table>
+    </div>
+   
+    <script type="text/javascript">
+     function adddata()
+     {
+         var name = document.sample.name.value;
+         var age = document.sample.age.value;
+         var emailid= document.sample.emailid.value;
+
+         var tr = document.createElement('tr')
+
+         var td1 = tr.appendChild(document.createElement('td'));
+         var td2 = tr.appendChild(document.createElement('td'));
+         var td3 = tr.appendChild(document.createElement('td'));
+         var td4 = tr.appendChild(document.createElement('td'));
+         var td5 = tr.appendChild(document.createElement('td'));
+
+         td1.innerHTML=name;
+         td2.innerHTML=age;
+         td3.innerHTML=emailid;
+         td4.innerHTML='<input type="button" name="add" value="Delete" onclick="deletedata(this);" class="btn btn-remove">'
+         td5.innerHTML='<input type="button" name="add" value="Edit" onclick="editdata(this);" class="btn btn-update">'
+
+         document.getElementById("tb1").appendChild(tr);
+
+     }
+
+     function editdata(stud)
+     {
+        var name = document.sample.name.value;
+         var age = document.sample.age.value;
+         var emailid= document.sample.emailid.value;
+
+         var s= stud.parentNode.parentNode;
+
+         var tr = document.createElement('tr')
+
+         var td1 = tr.appendChild(document.createElement('td'));
+         var td2 = tr.appendChild(document.createElement('td'));
+         var td3 = tr.appendChild(document.createElement('td'));
+         var td4 = tr.appendChild(document.createElement('td'));
+         var td5 = tr.appendChild(document.createElement('td'));
+
+         td1.innerHTML='<input type="text" name= "name1">';
+         td2.innerHTML='<input type="number" name ="age1">';
+         td3.innerHTML='<input type="text" name="emailid1">';
+         td4.innerHTML='<input type="button" name="add" value="Delete" onclick="deletedata(this);" class="btn btn-remove">'
+         td5.innerHTML='<input type="button" name="add" value="Edit" onclick="Adddataagain(this);" class="btn btn-update">'
+
+         document.getElementById("tb1").replaceChild(tr, s);
+
+
+     }
+
+      function Adddataagain(Stud) 
+      {
+        var name = document.sample.name.value;
+         var age = document.sample.age1.value;
+         var emailid= document.sample.emailid1.value;
+
+         var s= stud.parentNode.parentNode;
+
+         var tr = document.createElement('tr')
+
+         var td1 = tr.appendChild(document.createElement('td'));
+         var td2 = tr.appendChild(document.createElement('td'));
+         var td3 = tr.appendChild(document.createElement('td'));
+         var td4 = tr.appendChild(document.createElement('td'));
+         var td5 = tr.appendChild(document.createElement('td'));
+
+         td1.innerHTML=name;
+         td2.innerHTML=age;
+         td3.innerHTML=emailid;
+         td4.innerHTML='<input type="button" name="add" value="Delete" onclick="deletedata(this);" class="btn btn-remove">'
+         td5.innerHTML='<input type="button" name="add" value="Edit" onclick="editdata(this);" class="btn btn-update">'
+
+         document.getElementById("tb1").replaceChild(tr, s);
+
+
+      }
+
+     function deletedata(Stud)
+     {
+         var s= Stud.parentNode.parentNode;
+         s.parentNode.removeChild(s);
+     }
+
+
+    </script>
+    </body>
+</html>
+
